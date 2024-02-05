@@ -1776,8 +1776,7 @@ body {
     top: 20.5%;
     margin-left: 22%;
     font-weight: 300;
-    opacity: 0; 
-    transition: opacity 0.5s; 
+    opacity: 1; 
     z-index: 1; 
 }
 
@@ -1791,8 +1790,7 @@ body {
     top: 20.5%;
     margin-left: 20%;
     font-weight: 300;
-    opacity: 0; 
-    transition: opacity 0.5s; 
+    opacity: 1; 
     z-index: 1; 
 }
 
@@ -1808,15 +1806,8 @@ body {
     height: 7.6vh;
     width: 0.2vh;
     rotate: 90deg;
-    opacity: 0; 
-    transition: opacity 0.5s; 
+    opacity: 1; 
     z-index: 1; 
-}
-
-.skull-damage-container:hover .skull-damage,
-.skull-damage-container:hover .skull-damage-title,
-.skull-damage-container:hover .skull-damage-line {
-    opacity: 1;
 }
 
 .body-damage-title {
@@ -1829,8 +1820,7 @@ body {
     top: 28%;
     margin-left: 13%;
     font-weight: 300;
-    opacity: 0; 
-    transition: opacity 0.5s; 
+    opacity: 1; 
     z-index: 1; 
 }
 
@@ -1844,8 +1834,7 @@ body {
     top: 28%;
     margin-left: 10.5%;
     font-weight: 300;
-    opacity: 0; 
-    transition: opacity 0.5s; 
+    opacity: 1; 
     z-index: 1; 
 }
 
@@ -1861,13 +1850,6 @@ body {
     height: 7.6vh;
     width: 0.2vh;
     rotate: 90deg;
-    opacity: 0; 
-    transition: opacity 0.5s; 
+    opacity: 1; 
     z-index: 1; 
-}
-
-.body-damage-container:hover .body-damage,
-.body-damage-container:hover .body-damage-title,
-.body-damage-container:hover .body-damage-line {
-    opacity: 1;
 }
