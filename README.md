@@ -14,6 +14,7 @@ I removed the item images for my own sanity while uploading the changes. So plea
 If you've downloaded the previous version, I've included descriptions / tags above all the UI Changes i've made so you can easily convert over but below will be certain snippets if you'd like to add things yourself without inspecting the code.
 
 # Personal Information Snippet
+
 -- Client-Side LUA --
 
 QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
