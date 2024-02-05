@@ -160,11 +160,11 @@ local function tablelength(table)
     return count
 end
 
-RegisterNetEvent('ps-inventory:setDropVisualData', function(data)
+RegisterNetEvent('qb-inventory:setDropVisualData', function(data)
     droppedItems = data
 end)
 
-RegisterNetEvent('ps-inventory:updateDropVisualData', function(dropId, coords, itemsTable)
+RegisterNetEvent('qb-inventory:updateDropVisualData', function(dropId, coords, itemsTable)
     local pedCoord = GetEntityCoords(PlayerPedId())
 
     if #itemsTable == 0 and droppedItems[dropId] then

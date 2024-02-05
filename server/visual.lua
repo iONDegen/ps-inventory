@@ -23,7 +23,7 @@ end
 function OnDropUpdate(dropId, dropData)
     local itemsTable = FormatDropData(dropData)
 
-    TriggerClientEvent('ps-inventory:updateDropVisualData', -1, dropId, dropData.coords, itemsTable)
+    TriggerClientEvent('qb-inventory:updateDropVisualData', -1, dropId, dropData.coords, itemsTable)
 end
 
 
@@ -40,5 +40,5 @@ AddEventHandler("playerJoining", function(source)
         }
     end
 
-    TriggerClientEvent('ps-inventory:setDropVisualData', Source, dataToSend)
+    TriggerClientEvent('qb-inventory:setDropVisualData', Source, dataToSend)
 end)

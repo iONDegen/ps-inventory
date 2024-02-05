@@ -2133,7 +2133,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
                     itemData.info.quality = 100
                 end
                 local serial = itemData.info.serie
-                local imageurl = ("https://cfx-nui-ps-inventory/html/images/%s.png"):format(itemData.name)
+                local imageurl = ("https://cfx-nui-qb-inventory/html/images/%s.png"):format(itemData.name)
                 local notes = "Purchased at Ammunation"
                 local owner = Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname
                 local weapClass = 1
@@ -2150,7 +2150,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
                     itemData.info.quality = 100
                 end
                 local serial = itemData.info.serie
-                local imageurl = ("https://cfx-nui-ps-inventory/html/images/%s.png"):format(itemData.name)
+                local imageurl = ("https://cfx-nui-qb-inventory/html/images/%s.png"):format(itemData.name)
                 local notes = "Purchased at Ammunation"
                 local owner = Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname
                 local weapClass = 1
@@ -2255,7 +2255,7 @@ RegisterNetEvent('inventory:server:SetInventoryData', function(fromInventory, to
 	end
 end)
 
-RegisterNetEvent('ps-inventory:server:SaveStashItems', function(stashId, items)
+RegisterNetEvent('qb-inventory:server:SaveStashItems', function(stashId, items)
     MySQL.Async.insert('INSERT INTO stashitems (stash, items) VALUES (:stash, :items) ON DUPLICATE KEY UPDATE items = :items', {
         ['stash'] = stashId,
         ['items'] = json.encode(items)
@@ -2286,8 +2286,8 @@ RegisterServerEvent("inventory:server:GiveItem", function(target, name, amount, 
 				TriggerClientEvent('inventory:client:ItemBox',src, QBCore.Shared.Items[item.name], "remove")
 				QBCore.Functions.Notify(src, "You gave " .. OtherPlayer.PlayerData.charinfo.firstname.." "..OtherPlayer.PlayerData.charinfo.lastname.. " " .. amount .. " " .. item.label .."!")
 				TriggerClientEvent("inventory:client:UpdatePlayerInventory", src, true)
-				TriggerClientEvent('ps-inventory:client:giveAnim', src)
-				TriggerClientEvent('ps-inventory:client:giveAnim', target)
+				TriggerClientEvent('qb-inventory:client:giveAnim', src)
+				TriggerClientEvent('qb-inventory:client:giveAnim', target)
 			else
 				AddItem(src, item.name, amount, item.slot, item.info, item.created)
 				QBCore.Functions.Notify(src, "The other players inventory is full!", "error")
@@ -2313,7 +2313,7 @@ end)
 
 -- callback
 
-QBCore.Functions.CreateCallback('ps-inventory:server:GetStashItems', function(source, cb, stashId)
+QBCore.Functions.CreateCallback('qb-inventory:server:GetStashItems', function(source, cb, stashId)
 	cb(GetStashItems(stashId))
 end)
 
@@ -2712,8 +2712,8 @@ end)
 -- Warning Messages
 
 RegisterNetEvent('inventory:server:addTrunkItems', function()
-	print('inventory:server:addTrunkItems has been deprecated please use exports[\'ps-inventory\']:addTrunkItems(plate, items)')
+	print('inventory:server:addTrunkItems has been deprecated please use exports[\'qb-inventory\']:addTrunkItems(plate, items)')
 end)
 RegisterNetEvent('inventory:server:addGloveboxItems', function()
-	print('inventory:server:addGloveboxItems has been deprecated please use exports[\'ps-inventory\']:addGloveboxItems(plate, items)')
+	print('inventory:server:addGloveboxItems has been deprecated please use exports[\'qb-inventory\']:addGloveboxItems(plate, items)')
 end)
