@@ -53,6 +53,7 @@ QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(dat
 })
 
 -- HTML --
+
 <div class="player-name-title"> <span class="name-info-title">Name : </span></div>
 <div class="player-name"> <span class="name-info">Player-Name</span></div>
 <div class="phone-number-title"> <span class="phone-number-info">Phone Number : </span></div>
@@ -67,6 +68,7 @@ QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(dat
 <div class="citizen-id-line"></div>
 
 -- JS --
+
 $(".player-name-title").html('Name');
 $(".player-name").html(data.pName);
 $(".phone-number-title").html('Phone Number');
@@ -227,6 +229,7 @@ $(".citizen-id").html(data.pCID);
 }
 
 # Basic Damage / Health Snippet
+
 -- Client-Side LUA --
 
 local stress = 0
@@ -305,6 +308,7 @@ $(".body-damage-title").html(data.pDamage + "%");
 </div>
 
 -- CSS --
+
 /* Player Body */
 .player-body-container {
 	position: absolute;
