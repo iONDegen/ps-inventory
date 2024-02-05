@@ -9,6 +9,10 @@ local ShopItems = {}
 
 -- Functions
 
+function GetDrops()
+    return Drops
+end
+
 ---Loads the inventory for the player with the citizenid that is provided
 
 local function LoadInventory(source, citizenid)
