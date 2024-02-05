@@ -4,10 +4,11 @@ Project-Sloth's FiveM Inventory System Redesigned to Look Like and Feel like NoP
 I removed the item images for my own sanity while uploading the changes. So please use your own item images
 
 # Credit where Credit is Due
-Thanks to loljoshie for originally creating the lj-inventory we've all come to love.
-Thanks to ok1ez and the project sloth dev team for continuing lj-inventory's existence with keeping it up to date and maintaining it as ps-inventory.
-Thanks to root_ for making the items actually droppable with their respective props. 
-Thanks to the Project Sloth Community. Without the support on the first version this release wouldn't be possible.
+
+# Thanks to loljoshie for originally creating the lj-inventory we've all come to love.
+# Thanks to ok1ez and the project sloth dev team for continuing lj-inventory's existence with keeping it up to date and maintaining it as ps-inventory.
+# Thanks to root_ for making the items actually droppable with their respective props. 
+# Thanks to the Project Sloth Community. Without the support on the first version this release wouldn't be possible.
 
 # Importing
 If you've downloaded the previous version, I've included descriptions / tags above all the UI Changes i've made so you can easily convert over but below will be certain snippets if you'd like to add things yourself without inspecting the code.
