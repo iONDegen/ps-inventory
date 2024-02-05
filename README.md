@@ -14,6 +14,7 @@ If you've downloaded the previous version, I've included descriptions / tags abo
 
 # Personal Information Snippet
 -- Client-Side LUA --
+
 QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
   inventory = data.inventory
   other = data.other
