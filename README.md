@@ -261,7 +261,7 @@ QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(dat
   pCID = PlayerData.citizenid,
   pID = GetPlayerServerId(PlayerId()),
   pStress =  stress,
-  pHealth = 200 - GetEntityHealth(PlayerPedId()),
+  pDamage = 200 - GetEntityHealth(PlayerPedId()),
 })
 
 QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
