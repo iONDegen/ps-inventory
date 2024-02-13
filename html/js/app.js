@@ -194,6 +194,14 @@ $(document).on("click", "#item-give", function(e) {
     }
 });
 
+// Close contextmenu on rightclick while opened
+$(document).click(function(event) {
+    var rightClickMenu = $(".ply-iteminfo-container");
+    if (!rightClickMenu.is(event.target) && rightClickMenu.has(event.target).length === 0) {
+        rightClickMenu.fadeOut(100);
+    }
+});
+
 // Autostack Quickmove
 function GetFirstFreeSlot($toInv, $fromSlot) {
     var retval = null;
