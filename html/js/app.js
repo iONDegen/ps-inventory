@@ -179,12 +179,14 @@ $(document).on("click", "#item-use", function(e) {
 
 $(document).on("click", "#item-give", function(e) {
     if (contextMenuSelectedItem && ItemInventory) {
+        var itemamt = document.getElementById('item-amount-text').value
         Inventory.Close();
         $.post(
             "https://ps-inventory/GiveItem",
             JSON.stringify({
                 inventory: ItemInventory,
                 item: contextMenuSelectedItem,
+                itemamt: itemamt
             })
         );
     } else {

@@ -1011,7 +1011,7 @@ RegisterNUICallback("GiveItem", function(data, cb)
         if data.inventory == 'player' then
             local playerId = GetPlayerServerId(player)
             SetCurrentPedWeapon(PlayerPedId(),'WEAPON_UNARMED',true)
-            TriggerServerEvent("inventory:server:GiveItem", playerId, data.item.name, data.amount, data.item.slot)
+            TriggerServerEvent("inventory:server:GiveItem", playerId, data.item.name, tonumber(data.itemamt), data.item.slot)
         else
             QBCore.Functions.Notify("You do not own this item!", "error")
         end
