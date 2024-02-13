@@ -285,8 +285,8 @@ $(document).on("click", ".item-slot", function(e) {
             if (ItemData.name.split("_")[0] == "weapon") {
                 if (!$("#weapon-attachments").length) {
                     // if (ItemData.info.attachments !== null && ItemData.info.attachments !== undefined && ItemData.info.attachments.length > 0) {
-                    $(".inv-options-list").append(
-                        '<div class="inv-option-item" id="weapon-attachments"><p><i style="margin-top: 1rem" class="fas fa-gun"></i></p></div>'
+                    $(".ply-iteminfo-container").append(
+                        '<button class="inv-option-item" id="weapon-attachments"><p><i style="margin-top: 1rem" class="fas fa-gun"></i></p></button>'
                     );
                     $("#weapon-attachments").hide().fadeIn(250);
                     ClickedItemData = ItemData;
