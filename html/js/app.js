@@ -179,16 +179,26 @@ $(document).on("click", "#item-use", function(e) {
 
 $(document).on("click", "#item-give", function(e) {
     if (contextMenuSelectedItem && ItemInventory) {
+        var itemamt = document.getElementById('item-amount-text').value
         Inventory.Close();
         $.post(
             "https://ps-inventory/GiveItem",
             JSON.stringify({
                 inventory: ItemInventory,
                 item: contextMenuSelectedItem,
+                itemamt: itemamt
             })
         );
     } else {
         console.log('contextMenuSelectedItem or ItemInventory is not set correctly');
+    }
+});
+
+// Close contextmenu on rightclick while opened
+$(document).click(function(event) {
+    var rightClickMenu = $(".ply-iteminfo-container");
+    if (!rightClickMenu.is(event.target) && rightClickMenu.has(event.target).length === 0) {
+        rightClickMenu.fadeOut(100);
     }
 });
 
@@ -275,8 +285,8 @@ $(document).on("click", ".item-slot", function(e) {
             if (ItemData.name.split("_")[0] == "weapon") {
                 if (!$("#weapon-attachments").length) {
                     // if (ItemData.info.attachments !== null && ItemData.info.attachments !== undefined && ItemData.info.attachments.length > 0) {
-                    $(".inv-options-list").append(
-                        '<div class="inv-option-item" id="weapon-attachments"><p><i style="margin-top: 1rem" class="fas fa-gun"></i></p></div>'
+                    $(".ply-iteminfo-container").append(
+                        '<button class="inv-option-item" id="weapon-attachments"><p><i style="margin-top: 1rem" class="fas fa-gun"></i></p></button>'
                     );
                     $("#weapon-attachments").hide().fadeIn(250);
                     ClickedItemData = ItemData;
