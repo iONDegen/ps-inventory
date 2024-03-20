@@ -1165,9 +1165,9 @@ local function OpenInventory(name, id, other, origin)
 				secondInv.maxweight = Config.MaxInventoryWeight
 				secondInv.inventory = OtherPlayer.PlayerData.items
 				if (Player.PlayerData.job.name == "police" or Player.PlayerData.job.type == "leo") and Player.PlayerData.job.onduty then
-					secondInv.slots = Config.MaxInventorySlots
+					secondInv.slots = Config.MaxInventorySlots + 150
 				else
-					secondInv.slots = Config.MaxInventorySlots - 1
+					secondInv.slots = Config.MaxInventorySlots + 150
 				end
 				Wait(250)
 			end
@@ -1529,19 +1529,19 @@ RegisterNetEvent('inventory:server:OpenInventory', function(name, id, other)
 				secondInv.inventory = other.items
 				secondInv.slots = #other.items
 			elseif name == "otherplayer" then
-				local OtherPlayer = QBCore.Functions.GetPlayer(tonumber(id))
-				if OtherPlayer then
-					secondInv.name = "otherplayer-"..id
-					secondInv.label = "Player-"..id
-					secondInv.maxweight = Config.MaxInventoryWeight
-					secondInv.inventory = OtherPlayer.PlayerData.items
-					if (Player.PlayerData.job.name == "police" or Player.PlayerData.job.type == "leo") and Player.PlayerData.job.onduty then
-						secondInv.slots = Config.MaxInventorySlots
-					else
-						secondInv.slots = Config.MaxInventorySlots - 1
-					end
-					Wait(250)
-				end
+                local OtherPlayer = QBCore.Functions.GetPlayer(tonumber(id))
+                if OtherPlayer then
+                    secondInv.name = "otherplayer-"..id
+                    secondInv.label = "Player-"..id
+                    secondInv.maxweight = Config.MaxInventoryWeight
+                    secondInv.inventory = OtherPlayer.PlayerData.items
+                    if (Player.PlayerData.job.name == "police" or Player.PlayerData.job.type == "leo") and Player.PlayerData.job.onduty then
+                        secondInv.slots = Config.MaxInventorySlots + 150
+                    else
+                        secondInv.slots = Config.MaxInventorySlots + 150
+                    end
+                    Wait(250)
+                end
 			else
 				if Drops[id] then
 					if Drops[id].isOpen then
