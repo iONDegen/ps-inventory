@@ -20,7 +20,7 @@ If you've downloaded the previous version, I've included descriptions / tags abo
 # Personal Information Snippet
 
 -- Client-Side LUA --
-
+```lua
 QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
   inventory = data.inventory
   other = data.other
@@ -56,8 +56,10 @@ QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(dat
   pCID = PlayerData.citizenid,
   pID = GetPlayerServerId(PlayerId()),
 })
+```
 
 -- HTML --
+```html
 
 <div class="player-name-title"> <span class="name-info-title">Name : </span></div>
 <div class="player-name"> <span class="name-info">Player-Name</span></div>
@@ -71,8 +73,9 @@ QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(dat
 <div class="phone-number-line"></div>
 <div class="player-id-line"></div>
 <div class="citizen-id-line"></div>
-
+```
 -- JS --
+```js
 
 $(".player-name-title").html('Name');
 $(".player-name").html(data.pName);
@@ -82,8 +85,9 @@ $(".player-id-title").html('State ID');
 $(".player-id").html(data.pID);
 $(".citizen-id-title").html('Citizen ID');
 $(".citizen-id").html(data.pCID);
-
+```
 -- CSS --
+```css
 
 .ply-number-line {
   overflow: hidden;
@@ -232,10 +236,11 @@ $(".citizen-id").html(data.pCID);
   margin-left: 17.5%;
   font-weight: 300;
 }
-
+```
 # Basic Damage / Health Snippet
 
 -- Client-Side LUA --
+```lua
 
 local stress = 0
 
@@ -260,7 +265,7 @@ QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(dat
   pCID = PlayerData.citizenid,
   pID = GetPlayerServerId(PlayerId()),
   pStress =  stress,
-  pHealth = 200 - GetEntityHealth(PlayerPedId()),
+  pDamage = 200 - GetEntityHealth(PlayerPedId()),
 })
 
 QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(data)
@@ -280,17 +285,20 @@ QBCore.Functions.TriggerCallback('inventory:server:ConvertQuality', function(dat
   pCID = PlayerData.citizenid,
   pID = GetPlayerServerId(PlayerId()),
   pStress =  stress,
-  pHealth = 200 - GetEntityHealth(PlayerPedId()),
+  pDamage = 200 - GetEntityHealth(PlayerPedId()),
 })
-
+```
 -- JS --
+```js
+
 $(".skull-damage").html('Stress : ');
 $(".skull-damage-title").html(data.pStress);
 
 $(".body-damage").html('Damage : ');
 $(".body-damage-title").html(data.pDamage + "%");
-
+```
 -- HTML --
+```html
 
 <!-- Player Body Image -->
 <div class="player-body-container">
@@ -311,8 +319,9 @@ $(".body-damage-title").html(data.pDamage + "%");
 <div class="body-damage-title"></div>
 <div class="body-damage-line"></div>
 </div>
-
+```
 -- CSS --
+```css
 
 /* Player Body */
 .player-body-container {
@@ -452,3 +461,4 @@ $(".body-damage-title").html(data.pDamage + "%");
 .body-damage-container:hover .body-damage-line {
     opacity: 1;
 }
+```
